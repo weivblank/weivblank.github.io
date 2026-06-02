@@ -51,12 +51,27 @@ input[type="range"]::-webkit-slider-runnable-track {
     border-radius: 0px;
 }
 
+input[type="range"]::-moz-range-track {
+    cursor: pointer;
+    width: 100%;
+    background: var(--color-accent);
+    border-radius: 0px;
+}
+
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 12px;
     height: 12px;
     background: var(--color-fg);
     cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: var(--color-fg);
+    cursor: pointer;
+    border: none;
 }
 
 header {
