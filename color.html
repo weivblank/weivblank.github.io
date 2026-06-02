@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Справочник по теории графического дизайна</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <p class="logo-title">
+      Graphic<span class="logo-title--colored">.</span>
+    </p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="composition.html">Композиция</a></li>
+        <li><a href="typography.html">Типографика</a></li>
+        <li><a href="color.html">Цвет</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h1 class="title">Цвет</h1>
+      <p class="text">
+          Цвет — это не просто физическое свойство света, а мощный инструмент коммуникации в графическом дизайне. Он способен вызывать эмоции, управлять вниманием зрителя и формировать ассоциативные связи. В отличие от композиции, которая организует форму, цвет задает настроение и атмосферу издания. Понимание природы цвета позволяет дизайнеру переходить от интуитивного подбора к осознанному конструированию визуального образа.
+      </p>
+
+      <h2 class="subtitle">Модели HSB/HSL и RGB</h2>
+      <p class="text">
+          Для человеческого восприятия наиболее понятной является модель HSB (Hue, Saturation, Brightness) или ее вариация HSL (Lightness). 
+      </p>
+
+      <div class="color-lab">
+        <div class="color-lab__container">
+          <div class="color-lab__preview" id="colorPreview"></div>
+          
+          <div class="color-lab__controls">
+            <div class="color-lab__group">
+              <label class="color-lab__label">Hue (Тон): <span id="hueVal">50</span>°</label>
+              <input type="range" min="0" max="360" value="50" class="color-lab__slider" id="hueSlider">
+            </div>
+            
+            <div class="color-lab__group">
+              <label class="color-lab__label">Saturation (Насыщенность): <span id="satVal">100</span>%</label>
+              <input type="range" min="0" max="100" value="100" class="color-lab__slider" id="satSlider">
+            </div>
+            
+            <div class="color-lab__group">
+              <label class="color-lab__label">Brightness (Яркость): <span id="briVal">50</span>%</label>
+              <input type="range" min="0" max="100" value="50" class="color-lab__slider" id="briSlider">
+            </div>
+            </div>
+            
+            <p class="text color-lab__result">HEX: <span id="hexResult">#FFD700</span></p>
+        </div>
+      </div>
+      <ul class="text">
+          <li>Тон (Hue): Собственно цветовой оттенок, определяемый положением на цветовом круге (0–360 градусов).</li>
+          <li>Насыщенность (Saturation): Чистота цвета. При снижении насыщенности оттенок становится более серым и тусклым.</li>
+          <li>Яркость/Светлота (Brightness/Lightness): Количество белого или черного в цвете. Определяет, насколько светлым или темным выглядит объект.</li>
+      </ul>
+
+      <div class="color-lab">
+        <div class="color-lab__container">
+          <div class="color-lab__preview" id="rgbPreview"></div>
+          <div class="color-lab__controls">
+            <div class="color-lab__group">
+              <label class="color-lab__label">Red (Красный): <span id="rVal">255</span></label>
+              <input type="range" class="color-lab__slider" id="rSlider" min="0" max="255" value="255">
+            </div>
+
+            <div class="color-lab__group">
+              <label class="color-lab__label">Green (Зеленый): <span id="gVal">215</span></label>
+              <input type="range" class="color-lab__slider" id="gSlider" min="0" max="255" value="215">
+            </div>
+
+            <div class="color-lab__group">
+              <label class="color-lab__label">Blue (Синий): <span id="bVal">0</span></label>
+              <input type="range" class="color-lab__slider" id="bSlider" min="0" max="255" value="0">
+            </div>
+          </div>
+          <p class="color-lab__result" id="rgbHexResult">HEX: #FFD700</p>
+        </div>
+      </div>
+      <p class="text">
+          Выбор цветовой модели зависит от носителя информации. RGB (Red, Green, Blue, Красный, Зеленый, Синий) — аддитивная модель, используемая для экранов. Цвета образуются путем сложения световых лучей. Максимальное значение всех каналов дает белый цвет.
+      </p>
+
+      <h2 class="subtitle">Цветовой круг Иттена и гармонии</h2>
+      <p class="text">
+          Цветовой круг Иттена представляет собой организацию цветов спектра по принципу их взаимосвязи. Базовый круг состоит из 12 цветов: трёх основных (красный, жёлтый, синий), трёх вторичных (оранжевый, зелёный, фиолетовый) и шести третичных.
+      </p>
+      <p class="text">
+          Цветовые гармонии — это комбинации цветов, которые создают визуально сбалансированные и эстетически приятные сочетания.
+      </p>
+      <div class="color-wheel">
+        <img src="images/color-wheel.jpg" alt="Цветовые гармонии" class="color-wheel__img">
+      </div>
+      <p class="text">
+        Основные гармонии на цветовом круге Иттена
+      </p>
+      <!-- Место для интерактивного элемента "Генератор схем" -->
+
+      <h2 class="subtitle">Контраст и доступность (Accessibility)</h2>
+      <p class="text">
+          Эстетика не должна идти в ущерб читаемости. Контраст — это разница между двумя цветами, обеспечивающая разборчивость текста. Согласно стандартам WCAG, соотношение яркости текста и фона должно быть не менее 4.5:1 для обычного текста. Низкий контраст делает информацию недоступной для людей с нарушениями зрения и затрудняет чтение при ярком солнечном свете.
+      </p>
+      
+      <div class="contrast-checker">
+        <div class="contrast-checker__controls">
+          <div class="contrast-checker__group">
+            <label class="contrast-checker__label" for="text-color-input">Цвет текста</label>
+            <input  type="color" id="text-color-input" class="contrast-checker__input" value="#18181B">
+            <span class="contrast-checker__value" id="text-color-display">#18181B</span>
+          </div>
+          
+          <div class="contrast-checker__group">
+            <label class="contrast-checker__label" for="bg-color-input">Цвет фона</label>
+            <input type="color" id="bg-color-input" class="contrast-checker__input" value="#ffffff">
+            <span class="contrast-checker__value" id="bg-color-display">#FFFFFF</span>
+          </div>
+        </div>
+        
+        <div class="contrast-checker__preview" id="contrast-preview-box">
+          <p class="contrast-checker__sample-text">Пример текста для проверки читаемости</p>
+        </div>
+        
+        <div class="contrast-checker__result">
+          <div class="contrast-checker__ratio">
+            Коэффициент: <strong id="contrast-ratio-value">16.1:1</strong>
+          </div>
+          <div class="contrast-checker__status contrast-checker__status--success" id="wcag-status">
+            ✓ Проходит стандарт WCAG AA
+          </div>
+        </div>
+      </div>
+      <p class="text">
+        Интерактивная проверка контрастности по стандартам WCAG. Выберите цвета текста и фона, чтобы увидеть коэффициент контрастности.
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    <div>© 2026 ТГ</div>
+  </footer>
+
+  <script src="color-lab-hsb.js"></script>
+  <script src="color-lab-rgb.js"></script>
+  <script src="contrast-checker.js"></script>
+</body>
+</html>
