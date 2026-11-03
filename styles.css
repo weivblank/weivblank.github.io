@@ -1,0 +1,213 @@
+body {
+    font-family: Century gothic;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient( 45deg, #fcf2ec 25%, #ffffff 25%, #ffffff 50%, #fcf2ec 50%, #fcf2ec 75%, #ffffff 75% );
+    background-size: 20px 20px;
+}
+
+.header {
+    background: white;
+    padding: 10px 20px;
+    border-bottom: 2px dotted #bbb;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 20px;
+    display: inline-block;
+}
+
+h2 {
+    margin: 0 0 10px 0;
+}
+
+h3 {
+    margin: 0 0 10px 0;
+}
+
+.nav {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.nav a {
+    margin-right: 15px;
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 10px;
+}
+
+.section {
+    display: none;
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px dotted #bbb;
+}
+
+.exams-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.left-col {  /* колонки на главной */
+    width: 60%;
+}
+
+.right-col {
+    width: 40%;
+}
+
+.active { /* отображение открытого раздела */
+    display: block;
+}
+
+.card {
+    border: 2px dotted #bbb;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #fafafa;
+    position: relative;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #eee;
+    margin-top: 5px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #6ad03a;
+    width: 0%;
+}
+
+#detail-progress-text, #total-progress-text { /* оступ у процентов */
+    display: inline-block;
+    margin: 5px 0; 
+}
+
+button {
+    border: 0px;
+}
+
+input, textarea {
+    margin: 5px 0;
+    padding: 5px;
+    width: 100%;
+    border: 2px dotted #bbb; 
+}
+
+input[type='checkbox'] {
+    width: 20px;
+    margin-right: 20px
+}
+
+#detail-date {
+    display: inline-block;
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+.error {
+    color: #f00;
+    font-size: 12px;
+}
+
+.topic-item {
+    margin: 5px 0;
+    padding: 5px;
+    border: 1px solid #eee;
+}
+
+.countdown {
+    color: #777;
+    font-size: 14px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#calendar-month-selector { /* переключение месяца */
+    display: flex;
+    justify-content: center;
+}
+
+#calendar-month {
+    width: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar-header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 5px 0;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.bg-num { /* фоно ячеек календаря */
+    position: absolute;
+    font-size: 240px;
+    font-family: 'Impact';
+    color: rgb(240, 240, 236);
+    pointer-events: none;
+    mix-blend-mode: luminosity
+}
+
+.fg-num {
+    position: relative;
+    font-weight: bold;
+    font-size: 36px;
+    color: #000;
+    font-family: century gothic;
+}
+
+.has-exam {
+    background: #e7c176;
+}
+
+.delete-btn {
+    float: right;
+    color: #f00;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.notification {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #f90;
+    color: white;
+    padding: 10px;
+    border: 1px solid red;
+    display: none;
+    z-index: 999;
+}

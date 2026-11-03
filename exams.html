@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Планировщик экзаменов</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="notification" class="notification"></div>
+
+<div class="header">
+    <h1>Планировщик подготовки к экзаменам</h1>
+    <div class="nav">
+        <a onclick="showSection('exams')">Экзамены</a>
+        <a onclick="showSection('calendar')">Календарь</a>
+        <a onclick="showSection('stats')">Статистика</a>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Секция списка экзаменов -->
+    <div id="exams" class="section active">
+        <h2>Мои экзамены</h2>
+        
+        <div class="exams-wrapper">
+            
+            <div class="right-col">
+
+                <h3>Добавить экзамен</h3>
+                <div>
+                    Название:<br>
+                    <input type="text" id="exam-name" oninput="validateExamForm()">
+                    <div id="name-error" class="error"></div>
+                    Дата:<br>
+                    <input type="date" id="exam-date" oninput="validateExamForm()">
+                    <div id="date-error" class="error"></div>
+                    Описание:<br>
+                    <textarea id="exam-desc" rows="3"></textarea><br>
+                    <button onclick="addExam()">Добавить</button>
+                </div>
+            </div>
+
+            <div class="left-col">
+                <div id="exams-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="detail" class="section">
+        <a onclick="showSection('exams')" style="cursor:pointer; color:blue;">&larr; Назад к списку</a>
+        <h2 id="detail-title"></h2>
+        <p id="detail-desc"></p>
+        <div id="detail-date"></div> 
+        <span id="detail-countdown"></span>
+
+
+        <div class="progress-bar">
+            <div id="detail-progress" class="progress-fill"></div>
+        </div>
+        <span id="detail-progress-text"></span>
+
+        <h3>Темы</h3>
+        <div id="topics-list"></div>
+
+        <h3>Добавить тему</h3>
+        <input type="text" id="topic-name" placeholder="Название темы" oninput="validateTopicForm()">
+        <div id="topic-error" class="error"></div>
+        <button onclick="addTopic()">Добавить тему</button>
+    </div>
+ 
+    <div id="calendar" class="section">
+        <h2>Календарь</h2>
+        <div id="calendar-month-selector">
+            <button onclick="changeMonth(-1)">&lt;</button>
+            <span id="calendar-month"></span>
+            <button onclick="changeMonth(1)">&gt;</button>
+        </div>
+        <div id="calendar-grid" class="calendar-grid"></div>
+    </div>
+
+    <div id="stats" class="section">
+        <h2>Статистика</h2>
+        <h3>Общая готовность</h3>
+        <div class="progress-bar">
+            <div id="total-progress" class="progress-fill"></div>
+        </div>
+        <span id="total-progress-text"></span>
+
+        <h3>Ближайшие экзамены</h3>
+        <div id="upcoming-exams"></div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
